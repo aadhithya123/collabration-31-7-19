@@ -1,0 +1,28 @@
+<div ng-controller="UserController">
+<div class="container">    
+		<h2>Update Profile</h2>
+		
+		<form action="/doUpload" method="post" enctype="multipart/form-data">
+		
+        <div class="form-group">
+			<div class="input-group">
+				 <label for="exampleInputEmail1">Name: {{currentUser.Name}}</label>
+			</div>
+			
+			<div class="form-group">
+			<div class="input-group">
+				 <label for="exampleInputEmail1">Picture</label>
+				<input type="file" class="form-control" name="file" required="required">
+			</div>
+        </div>
+        
+			<div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg" ng-click="updateprofile()" value="Update profile Picture"></button>
+        </div>
+        </div>   
+    </form>      
+  </div>
+</div>
+        
+      
+        

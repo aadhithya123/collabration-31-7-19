@@ -1,0 +1,18 @@
+<div class="container" ng-controller="ChatController">
+<form ng-submit="addMessage()" name="chatMsg">
+<table class="table table-bordered">
+<tr>
+<td>Chat Text</td>
+<td>
+<input type="text" ng-model="Message"/>
+<span class="count" ng-bind="max - Message.length">140</span>
+</td>
+</tr>
+ </table>
+</form>
+
+<p ng-repeat="message in Messages"|orderBy:'time':true>
+<time>{{message.time|date:'HH:MM'}}</time>
+<span>{{message.message}}</span>
+</p>
+</div>

@@ -1,0 +1,39 @@
+<div class="container" ng-controller="BlogCommentController">
+<div class="row">
+<div class="main1">
+		<h3>Blog Comment</h3>
+		<div>
+		<div class="panel-group" id="accordion">
+		<div class="panel panel-default">
+		<div class="panel-heading">
+		<h4 class="panel-title">
+		<a toggle="collapse" data-parent="#accordion" href="!#{{job.jobid}}">{{job.designation}}</a>
+</h4>
+</div>
+<div id="{{blog.blogid}}" class="panel-collapse collapse">
+<div class="panel-body">{{blog.blogcomment}}</div>
+</div>
+</div>
+</div>
+<div>
+<table class="table table-bordered">
+<tr><td colspan="2">
+<ul type="disc">
+<li ng-repeat="comment in blogcomments">
+{{comment.username}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{{comment.blogcomment}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{{comment.commentdate}}
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><textarea rows="2" cols="30" ng-model="blogcomment.comment"></textarea></td>
+<td><input type="button" value="send" ng-click="addCommen()"></td></tr>
+</table>
+</div>
+
+</div>
+</div>
+</div>
+</div>
