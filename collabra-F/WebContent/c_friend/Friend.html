@@ -1,0 +1,57 @@
+<div class="container" ng-controller="Friendcontroller">
+	<div class="row">
+	<div class="main">
+	<h3>Friend</h3>
+       </div>
+      </div>
+	<div style="background-color:cyan"><h3 align="left">Friend List</h3></div>
+	<div class="row text-center text-lg-left">
+	<div ng-repeat="friend in friendList" class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+	<div ng-show="friend.username==currentUser.username">
+	<img src="http.post('http://localhost:8080/ConnectPeopleMiddle/getImage/{{friend.friendname}}" class="img-circle" width="10" height="10"/>
+	<p>
+		<strong>{{friend.friendname}}</strong>
+		<input type="button" value="Unfriend" ng-click="unfriend{friend.friendid}" class="btn btn-danger"/>
+		</p>
+	</div>
+	
+	<div ng-show="friend.friendname==currentUser.username">
+	<img src="http.post('http://localhost:8080/ConnectPeopleMiddle/getImage/{{friend.username}}" class="img-circle" width="10" height="10"/>
+	<p>
+		<strong>{{friend.username}}</strong>
+		<input type="button" value="Unfriend" ng-click="unfriend{friend.friendid}" class="btn btn-danger"/>
+		</p>
+	</div>
+	
+	</div>
+	</div>
+	
+	<div style="background-color:cyan"><h3 align="left">Pending Friend List</h3></div>
+	<div class="row text-center text-lg-left">
+	<div ng-repeat="friend in PendingfriendList" class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+	<div ng-show="friend.friendname==currentUser.username">
+	<img src="http.post('http://localhost:8080/ConnectPeopleMiddle/getImage/{{friend.friendname}}" class="img-circle" width="10" height="10"/>
+	<p>
+		<strong>{{friend.username}}</strong>
+		<input type="button" value="Unfriend" ng-click="accept{friend.friendid}" class="btn btn-danger"/>
+		
+		<input type="button" value="Unfriend" ng-click="unfriend{friend.friendid}" class="btn btn-danger"/>
+		</p>
+	</div>
+	
+	</div>
+	</div>
+	
+	<div style="background-color:cyan"><h3 align="left">Suggested Friend List</h3></div>
+	<div class="row text-center text-lg-left">
+	<div ng-repeat="friend in SuggestedfriendList" class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+	<div ng-show="friend.friendname==currentUser.username">
+	<img src="http.post('http://localhost:8080/ConnectPeopleMiddle/getImage/{{friend.friendname}}" class="img-circle" width="10" height="10"/>
+	<p>
+		<strong>{{friend.username}}</strong>
+		<input type="button" value="Unfriend" ng-click="sendFriendRequest{friend.friendid}" class="btn btn-danger"/>
+	</p>
+	</div>
+	</div>
+	</div>
+</div>
